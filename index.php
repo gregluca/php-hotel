@@ -53,6 +53,14 @@
 </head>
 <body>
 <div class="container mt-3">
+    <h1>Cerca l'hotel perfetto per te</h1>
+    <form action="index.php" method="GET">
+        <label for="hotel">Cerca hotel</label>
+        <input type="text" id="hotel" name="hotel">
+
+        <button type="submit">Cerca</button>
+
+    </form>
         <table class="table">
             <thead>
                 <tr>
