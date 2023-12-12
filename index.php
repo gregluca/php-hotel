@@ -49,20 +49,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-<?php 
-for($i = 0; $i < count($hotels); $i++) {
-    $cur_hotel = $hotels[$i]; ?>
-    <div>
-        <h2><?php echo $cur_hotel['name'] ?></h2>
-        <p><?php echo $cur_hotel['description']; ?></p>
-        <p>Parking: <?php echo $cur_hotel['parking'] ? 'Yes' : 'No'; ?></p>
-        <p><?php echo $cur_hotel['vote'] ?></p>
-        <p><?php echo $cur_hotel['distance_to_center'] ?></p>
+<div class="container mt-3">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Descrizione</th>
+                    <th scope="col">Parcheggio</th>
+                    <th scope="col">Voto</th>
+                    <th scope="col">Distanza dal centro (km)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                foreach ($hotels as $cur_hotel) {
+                ?>
+                    <tr>
+                        <td><?php echo $cur_hotel['name'] ?></td>
+                        <td><?php echo $cur_hotel['description']; ?></td>
+                        <td><?php echo $cur_hotel['parking'] ? 'Sì' : 'No'; ?></td>
+                        <td><?php echo $cur_hotel['vote'] ?></td>
+                        <td><?php echo $cur_hotel['distance_to_center'] ?></td>
+                    </tr>
+                <?php
+                }
+                ?>
+            </tbody>
+        </table>
     </div>
-    <hr>
-<?php } ?>
+
     
 </body>
 </html>
